@@ -1,6 +1,9 @@
-
-
-
+<?php
+session_start();
+if(!isset($_SESSION['s_id'])){
+    header('location: oops.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -401,6 +404,9 @@
                         <div class="d-flex">
                             <ul class="navbar-nav">
                                 <li class="nav-item hidden-on-mobile">
+                                    <a href="logout.php" class="btn btn-danger btn-sm">Logout</a>
+                                </li>
+                                <!-- <li class="nav-item hidden-on-mobile">
                                     <a class="nav-link active" href="#">Applications</a>
                                 </li>
                                 <li class="nav-item hidden-on-mobile">
@@ -492,7 +498,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -505,6 +511,8 @@
                             <div class="col">
                                 <div class="page-description">
                                     <h1>Dashboard</h1>
+                                    <h2>Welcome, <?= $_SESSION['s_name'] ?> (<?= $_SESSION['s_email_address'] ?>)</h2>
+                                    <h3><?= $_SESSION['s_id'] ?></h3>
                                 </div>
                             </div>
                         </div>
