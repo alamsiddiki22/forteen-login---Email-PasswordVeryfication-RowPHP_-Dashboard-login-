@@ -70,9 +70,8 @@ session_start();
                     <span class="alert-text"><?= $_SESSION['login_error'] ?></span>
                 </div>
             </div>
-            <?php
-                endif;
-            ?>
+            <?php endif; ?>
+            
             <form action="login_post.php" method="POST">
                 <div class="auth-credentials m-b-xxl">
                     <label class="form-label">Email address</label>

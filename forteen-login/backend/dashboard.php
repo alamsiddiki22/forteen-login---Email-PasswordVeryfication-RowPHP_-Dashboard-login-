@@ -319,16 +319,18 @@ $db_connect = mysqli_connect('localhost', 'root', '', 'apple');
                         <div class="row">
                             <div class="col-xl-6">
                                 <?php
-                                $user_select_query = "SELECT id, name, email_address FROM users LIMIT 5";
+                                $user_select_query = "SELECT id, name, email_address FROM users LIMIT 3";
                                 $user_count_query = "SELECT COUNT(*) as total_users FROM users";
                                 $users_from_db = mysqli_query($db_connect, $user_select_query);
                                 $users_count_from_db = mysqli_query($db_connect, $user_count_query);
+                                $total_users = mysqli_fetch_assoc($users_count_from_db)['total_users']
                                 ?>
                                 <div class="card widget widget-list">
                                     <div class="card-header">
-                                        <h5 class="card-title">New Users<span class="badge badge-success badge-style-light"><?= mysqli_fetch_assoc($users_count_from_db)['total_users']?> total</span></h5>
+                                        <h5 class="card-title">New Users<span class="badge badge-success badge-style-light"><?= $total_users?> total</span></h5>
                                     </div>
                                     <div class="card-body">
+                                        <p>Showing <?= $users_from_db->num_rows?> users out of <?= $total_users?> users</p>
                                         <ul class="widget-list-content list-unstyled" style="overflow-y: scroll; height: 380px;">
                                             <?php foreach ($users_from_db as $user) : ?>
                                             <li class="widget-list-item widget-list-item-red">

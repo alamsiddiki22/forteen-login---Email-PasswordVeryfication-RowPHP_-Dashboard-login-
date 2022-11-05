@@ -49,6 +49,16 @@ session_start();
                 <a href="index.html">Neptune</a>
             </div>
             <p class="auth-description">Please enter your credentials to create an account.<br>Already have an account? <a href="login.php">Login</a></p>
+
+            <?php if(isset($_SESSION['duplicate_email_address_error'])): ?>
+            <div class="alert alert-custom" role="alert">
+                <div class="custom-alert-icon icon-danger"><i class="material-icons-outlined">undone</i></div>
+                <div class="alert-content">
+                    <span class="alert-title">Error!</span>
+                    <span class="alert-text"><?= $_SESSION['duplicate_email_address_error'] ?></span>
+                </div>
+            </div>
+            <?php endif; ?>
             <form action="register_post.php" method="POST">
                 <div class="auth-credentials m-b-xxl">
                     <label class="form-label">Name</label>

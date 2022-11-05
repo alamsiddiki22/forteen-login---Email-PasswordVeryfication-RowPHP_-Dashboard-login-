@@ -72,10 +72,19 @@ if($flag) {
 else{
     $db_connect = mysqli_connect('localhost', 'root', '', 'apple');
     $encrypted_password = md5($password);
-    $insert_query = "INSERT INTO users (name, email_address, password) VALUES ('$name', '$email_address', '$encrypted_password')";
-    mysqli_query($db_connect, $insert_query);
-    $_SESSION['s_email_address'] = $email_address;
-    $_SESSION['register_status'] = "$name, Your accout created successfully!";
-    header('location: login.php');
+
+    $duplicate_email_check_query = "SELECT COUNT(*) AS validity FROM users WHERE email_address = '$email_address'";
+    $duplicate_email_check_from_db = mysqli_query($db_connect, $duplicate_email_check_query);
+    if(mysqli_fetch_assoc($duplicate_email_check_from_db)['validity'] == 1){
+        $_SESSION['duplicate_email_address_error'] ="$email_address email address already taken";
+        header('location: register.php');
+    }else{
+
+        $insert_query = "INSERT INTO users (name, email_address, password) VALUES ('$name', '$email_address', '$encrypted_password')";
+        mysqli_query($db_connect, $insert_query);
+        $_SESSION['s_email_address'] = $email_address;
+        $_SESSION['register_status'] = "$name, Your accout created successfully!";
+        header('location: login.php');
+    }
 }
 ?>
