@@ -83,12 +83,13 @@ session_start();
                             <div class="form-text m-b-md text-danger"><?php echo $_SESSION['email_error']; ?></div>
                         <?php
                             // unset($_SESSION['email_error']);
-                        endif;
-                    ?>
+                        endif; ?>
+                    <label class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" placeholder="017xxxxxxxx" name="phone_number" value="">
 
                     <label class="form-label">Password</label>
                     <input id="password_field" type="password" class="form-control <?= (isset($_SESSION['password_error'])) ? 'is-invalid' : ''?>" placeholder="password" name="password" value="<?= (isset($_SESSION['old_password'])) ? $_SESSION['old_password'] : '' ?>" >
-                    <label for="show_password"><input id="show_password" type="checkbox" onclick="myFunction()"> Show Password</label><br>
+                    <label for="show_password"><input id="show_password" type="checkbox" onclick="myFunction()"> Show Password</label><br><br>
                     <script>
                         function myFunction() {
                             var x = document.getElementById("password_field");

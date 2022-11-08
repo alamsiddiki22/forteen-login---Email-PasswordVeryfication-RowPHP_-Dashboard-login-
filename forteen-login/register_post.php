@@ -2,6 +2,7 @@
 session_start();
 $name = $_POST['name'];
 $email_address = $_POST['email_address'];
+$phone_number = $_POST['phone_number'];
 $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
 $flag = false;
@@ -80,7 +81,7 @@ else{
         header('location: register.php');
     }else{
 
-        $insert_query = "INSERT INTO users (name, email_address, password) VALUES ('$name', '$email_address', '$encrypted_password')";
+        $insert_query = "INSERT INTO users (name, email_address, password, phone_number) VALUES ('$name', '$email_address', '$encrypted_password', '$phone_number')";
         mysqli_query($db_connect, $insert_query);
         $_SESSION['s_email_address'] = $email_address;
         $_SESSION['register_status'] = "$name, Your accout created successfully!";
