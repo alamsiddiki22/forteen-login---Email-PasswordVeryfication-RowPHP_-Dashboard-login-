@@ -8,7 +8,7 @@
     $page_name = end($link);
     // page name end
 
-    $db_connect = mysqli_connect('localhost', 'root', '', 'apple');
+    require_once 'db.php';
     $user_id = $_SESSION['s_id'];
     $profile_photo_name_query = "SELECT profile_photo_name FROM users WHERE id = $user_id";
     $profile_photo_name_from_db = mysqli_query($db_connect, $profile_photo_name_query);
@@ -59,8 +59,7 @@
                 <a href="index.html" class="logo-icon"><span class="logo-text">Neptune</span></a>
                 <div class="sidebar-user-switcher user-activity-online">
                     <a href="#">
-                        <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS03toaZ810yqxEfpLvHxNrpSllc4CevOTfXC1fnP-QbQ&s"> -->
-                        <img src=".\uploads\profile_photos\<?=$profile_photo_name ?>" alt="">
+                        <img src="uploads\profile_photos\<?=$profile_photo_name ?>" alt="">
                         <span class="user-info-text"><?= $_SESSION['s_name'] ?><br><span class="user-state-info"><?= $_SESSION['s_email_address'] ?></span></span>
                     </a>
                 </div>
@@ -75,6 +74,18 @@
                     </li>
                     <li class="<?= ($page_name == 'profile.php') ? 'active-page': ''?>">
                         <a href="profile.php"><i class="material-icons-two-tone">face</i>Profile</a>
+                    </li>
+                    <li class="<?= ($page_name == 'service_add.php' || $page_name == 'service_list.php') ? 'active-page': ''?>">
+                        <a href=""><i class="material-icons-two-tone">home_repair_service</i>Service<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a class="<?= ($page_name == 'service_add.php') ? 'active': ''?>" href="service_add.php">Add Service</a>
+                                <a class="<?= ($page_name == 'service_list.php') ? 'active': ''?>" href="service_list.php">List Service</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../index.php" target="_blank"><i class="material-icons-two-tone">home</i>Visit Website</a>
                     </li>
                     <li>
                         <a href="calendar.html"><i class="material-icons-two-tone">calendar_today</i>Calendar<span class="badge rounded-pill badge-success float-end">14</span></a>

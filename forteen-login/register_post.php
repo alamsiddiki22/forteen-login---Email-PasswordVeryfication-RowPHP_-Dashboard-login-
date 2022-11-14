@@ -85,6 +85,9 @@ else{
         mysqli_query($db_connect, $insert_query);
         $_SESSION['s_email_address'] = $email_address;
         $_SESSION['register_status'] = "$name, Your accout created successfully!";
+        // sms send start
+        // bulksms account login kore API r laravel code copy kore then past in(class-18_shohan sir)last 15 minite r maje asa...
+        // sms send end
         header('location: login.php');
     }
 }
