@@ -19,7 +19,8 @@ require_once 'backend/includes/db.php';
         <link rel="stylesheet" href="assets/frontend/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/frontend/css/animate.min.css">
         <link rel="stylesheet" href="assets/frontend/css/magnific-popup.css">
-        <link rel="stylesheet" href="assets/frontend/css/fontawesome-all.min.css">
+        <!-- <link rel="stylesheet" href="assets/frontend/css/fontawesome-all.min.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
         <link rel="stylesheet" href="assets/frontend/css/flaticon.css">
         <link rel="stylesheet" href="assets/frontend/css/slick.css">
         <link rel="stylesheet" href="assets/frontend/css/aos.css">
@@ -128,10 +129,10 @@ require_once 'backend/includes/db.php';
                                 <p class="wow fadeInUp" data-wow-delay="0.6s">I'm Will Smith, professional web developer with long time experience in this field​.</p>
                                 <div class="banner-social wow fadeInUp" data-wow-delay="0.8s">
                                     <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                                     </ul>
                                 </div>
                                 <a href="#" class="btn wow fadeInUp" data-wow-delay="1s">SEE PORTFOLIOS</a>
@@ -363,43 +364,10 @@ require_once 'backend/includes/db.php';
                             <div class="col-xl-2 col-lg-3 col-sm-6">
                                 <div class="fact-box text-center mb-50">
                                     <div class="fact-icon">
-                                        <i class="flaticon-award"></i>
-                                    </div>
-                                    <div class="fact-content">
-                                        <h2><span class="count">245</span></h2>
-                                        <span>Feature Item</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-lg-3 col-sm-6">
-                                <div class="fact-box text-center mb-50">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-like"></i>
-                                    </div>
-                                    <div class="fact-content">
-                                        <h2><span class="count">345</span></h2>
-                                        <span>Active Products</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-lg-3 col-sm-6">
-                                <div class="fact-box text-center mb-50">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-event"></i>
-                                    </div>
-                                    <div class="fact-content">
-                                        <h2><span class="count">39</span></h2>
-                                        <span>Year Experience</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-lg-3 col-sm-6">
-                                <div class="fact-box text-center mb-50">
-                                    <div class="fact-icon">
                                         <i class="flaticon-woman"></i>
                                     </div>
                                     <div class="fact-content">
-                                        <h2><span class="count">3</span>k</h2>
+                                        <h2><span class="count">3000</span></h2>
                                         <span>Our Clients</span>
                                     </div>
                                 </div>
@@ -508,9 +476,9 @@ require_once 'backend/includes/db.php';
                                 <h5>OFFICE IN <span>NEW YORK</span></h5>
                                 <div class="contact-list">
                                     <ul>
-                                        <li><i class="fas fa-map-marker"></i><span>Address :</span>Event Center park WT 22 New York</li>
-                                        <li><i class="fas fa-headphones"></i><span>Phone :</span>+9 125 645 8654</li>
-                                        <li><i class="fas fa-globe-asia"></i><span>e-mail :</span>info@exemple.com</li>
+                                        <li><i class="fa fa-map-marker"></i><span>Address :</span>Event Center park WT 22 New York</li>
+                                        <li><i class="fa fa-headphones"></i><span>Phone :</span>+9 125 645 8654</li>
+                                        <li><i class="fa fa-envelope"></i><span>e-mail :</span>info@exemple.com</li>
                                     </ul>
                                 </div>
                             </div>

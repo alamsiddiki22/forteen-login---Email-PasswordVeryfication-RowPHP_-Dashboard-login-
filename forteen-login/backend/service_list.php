@@ -42,8 +42,8 @@ $tab_title = "Profile - Change your info";
                                 <td><?= $service['service_name'] ?></td>
                                 <td><?= $service['service_description'] ?></td>
                                 <td>
-                                    <?= $service['service_icon'] ?>
-                                    <i class="fa fa-user"></i>
+                                    
+                                    <i class="<?= $service['service_icon'] ?>"></i>
                                 </td>
                                 <td>
                                     <?php if($service['status'] == 'active') : ?>
@@ -54,8 +54,8 @@ $tab_title = "Profile - Change your info";
                                 </td>
                                 <td>
                                     <a href="service_delete.php?id=<?= $service['id'] ?>" class="btn btn-danger">Delete</a>
-                                    <button class="btn btn-info">Edit</button>
-                                    <button class="btn btn-warning">Change Status</button>
+                                    <a href="service_edit.php?id=<?= $service['id'] ?>" class="btn btn-info">Edit</a>
+                                    <!-- <button class="btn btn-warning">Change Status</button> -->
                                 </td>
                             </tr>
                             <?php endforeach; ?>
