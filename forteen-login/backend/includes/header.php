@@ -79,6 +79,9 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="<?= ($page_name == 'portfolio.php') ? 'active-page': ''?>">
+                        <a href="portfolio.php"><i class="material-icons-two-tone">source</i>Portfolio</a>
+                    </li>
                     <li>
                         <a href="../index.php" target="_blank"><i class="material-icons-two-tone">home</i>Visit Website</a>
                     </li>

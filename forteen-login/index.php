@@ -247,7 +247,7 @@ require_once 'backend/includes/db.php';
 					<div class="row">
 
                     <?php
-                    $active_services_query = "SELECT * FROM services WHERE status = 'active'";
+                    $active_services_query = "SELECT * FROM services WHERE status = 'active' AND delete_status = 'no'";
                     $active_services_from_db = mysqli_query($db_connect, $active_services_query);
                     ?>
                     <?php foreach($active_services_from_db as $service) : ?>
